@@ -1,26 +1,24 @@
-# Sales Insights Data Analysis Project 
+## 📌 Project Description
 
-## Project Overview
-This project focuses on a computer hardware manufacturer, Atliq Hardware, facing declining sales and tracking challenges in a dynamically growing market. Built using **Power BI** and **SQL**, this interactive dashboard provides the Sales Director, Bhavin Patel, with real-time, digestible insights to drive data-driven strategies instead of relying on verbal, sugar-coated manager reports.
+This project replicates a real-world corporate data analytics workflow for a computer hardware manufacturer. The company was facing declining sales in a highly dynamic market, and the Sales Director struggled to get accurate insights from messy Excel files and subjective verbal updates from regional managers.
 
-## AIMS Grid Project Management
-* **Purpose**: To unlock hidden sales insights for decision-making and automate manual data processes.
-* **Stakeholders**: Sales Director, Marketing Team, IT Team, Data Analytics Team.
-* **End Result**: An interactive Power BI Dashboard providing real-time sales and revenue metrics.
-* **Success Criteria**: Detect weak regions, reduce manual report tracking time by 60%, and enable targeted promotional offers.
+To solve this, I built an end-to-end Business Intelligence solution that replaces manual reporting with an automated, interactive dashboard, shifting the company from gut-feeling decisions to **data-driven strategies**.
 
-## Tech Stack Used
-* **BI Tool**: Power BI Desktop
-* **Database**: MySQL Workbench
-* **Language**: DAX (Data Analysis Expressions), SQL
+### 🛠️ Technical Workflow & Implementation
 
-## Key Insights Uncovered
-* Revenue trends breakdown by region (North, South, Central India).
-* Identification of top-performing and lowest-performing clients/products.
-* Year-over-Year (YoY) metrics for revenue and sales quantity.
+1. **Data Discovery & Database Setup**: 
+   * Linked a MySQL database containing sales transactions, customer records, products, and market data.
+   * Executed SQL queries to explore schema structures, check record counts, and perform initial data validation.
 
-## How to Run This Project
-1. Clone this repository.
-2. Import the SQL database dump file into your MySQL database.
-3. Open the `.pbix` file using Power BI Desktop.
-4. Update the data source credentials to link to your local database instance.
+2. **Data Cleaning & ETL (Power Query)**:
+   * Handled data anomalies, filtered out invalid transaction values (e.g., zero or negative sales values).
+   * Normailzed currency inconsistencies (converting USD transactions to INR for standardized reporting).
+   * Cleaned up blank regional entries to ensure clean data formatting.
+
+3. **Data Modeling & DAX**:
+   * Designed a robust **Star Schema** by establishing relationships between the fact table (`fact_sales`) and dimension tables (`dim_customers`, `dim_products`, `dim_markets`, `dim_date`).
+   * Created key business metrics using **DAX (Data Analysis Expressions)**, including Total Revenue, Sales Quantity, and dynamic date filtering.
+
+4. **Dashboard Design & Insights**:
+   * Engineered a highly intuitive dashboard layout tracking top clients, profit trends, revenue contribution by zone, and lowest-performing regions.
+   * Implemented interactive filters allowing stakeholders to slice data by year, month, and market instantly.
